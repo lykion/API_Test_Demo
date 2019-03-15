@@ -7,7 +7,8 @@ class logger:
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.INFO)
         # 设置log输出格式
-        self.formatter = logging.Formatter('[%(asctime)s] -- %(levelname)s: %(message)s', '%Y-%m-%d %H:%M:%S')
+        # self.formatter = logging.Formatter('[%(asctime)s] -- %(levelname)s: %(message)s', '%Y-%m-%d %H:%M:%S')
+        self.formatter = logging.Formatter('[%(asctime)s] -- %(threadName)s-%(filename)s-%(lineno)s %(levelname)s: %(message)s', '%Y-%m-%d %H:%M:%S')
 
         self.consle = logging.StreamHandler()   # StreamHandler将log输出到控制台
         self.consle.setFormatter(self.formatter)
